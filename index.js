@@ -2,13 +2,14 @@ var express = require('express');
 var mongoose = require('mongoose');
 var cors = require('cors')
 var nodemailer = require('nodemailer');
+const port = 3000;
 
 var app = express();
 
 app.use(express.json())
 app.use(cors())
 
-app.listen(process.env.PORT, () => { console.log('server listening at 8081...')});
+app.listen(process.env.PORT || port, () => { console.log('server listening at 8081...')});
 
 var mongoDB = 'mongodb://127.0.0.1/flipkart';
 mongoose.connect("mongodb+srv://flipkart:Abhil2022@cluster0.eo9hubb.mongodb.net/flipkart").then((data) => {
